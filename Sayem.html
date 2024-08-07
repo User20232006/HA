@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Black background */
+            color: white; /* White text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        header {
+            background-color: #333333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ffffff;
+        }
+        p {
+            font-size: 24px;
+            color: #ff69b4; /* Pink color for the heart */
+            position: relative;
+        }
+        p::before, p::after {
+            content: "❤️";
+            font-size: 48px;
+            color: #ff69b4; /* Pink color for the heart */
+            position: absolute;
+            top: -20px;
+        }
+        p::before {
+            left: -50px;
+        }
+        p::after {
+            right: -50px;
+        }
+        button {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #005f6b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Will You Marry Me?</h1>
+    </header>
+    <main>
+        <p>I love you Hadisa Amiri</p>
+        <button onclick="handleResponse('Yes')">Yes</button>
+        <button onclick="handleResponse('No')">No</button>
+    </main>
+    <script>
+        function handleResponse(answer) {
+            const email = 'mohammadsayemkarimi@gmail.com';
+            const subject = encodeURIComponent('Response to Marriage Proposal');
+            const body = encodeURIComponent(`The response to the marriage proposal is: ${answer}`);
+            const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+            
+            window.location.href = mailtoLink;
+            
+            alert(`Your response "${answer}" has been sent to ${email}.`);
+        }
+    </script>
+</body>
+</html>
